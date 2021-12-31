@@ -123,6 +123,7 @@ Feedback: https://github.com/missuo/LinuxTools/issues
         *) echo -e "[${red}Error${plain}] Please enter the correct number!"
         esac
     }
+menu
 
 install_bbr() {
     wget -N --no-check-certificate "https://github.000060000.xyz/tcpx.sh" && chmod +x tcpx.sh && ./tcpx.sh
