@@ -68,63 +68,6 @@ show_system_info
 # Make Sure Run in Root
 [[ $EUID != 0 ]] && echo -e "[${red}Error${plain}] This script must be run as root!" && exit 1
 
-# Menu Function
-menu(){
-    clear
-    echo & echo -e "Linux Tools by Vincent Young
-Feedback: https://github.com/missuo/LinuxTools/issues
----------------------Mode List---------------------
-0. Exit
-1. Install BBR Kernel(@ylx2016)
-2. Install Cloudflare Warp(@missuo)
-3. Install Cloudflare Warp(@P3TERX)
-4. Install Shadowsocks
-5. Inatall MTProto(No TLS)
-6. Install MTProto(TLS)
-7. Install BestTrace
-8. Install aaPanel
-9. LemonBench
-10. Bench
-11. Netflix Check(@sjlleo)
-12. Change Hostname
-13. Media Check
-----------------------------------------------------
-"
-    read -p "Please enter the number of the mode you want: " num
-    case $num in
-        0) exit 0
-        ;;
-        1) install_bbr
-        ;;
-        2) install_cloudflare
-        ;;
-        3) install_cloudflare_p3terx
-        ;;
-        4) install_shadowsocks
-        ;;
-        5) install_mtproto_nontls
-        ;;
-        6) install_mtproto_tls
-        ;;
-        7) install_besttrace
-        ;;
-        8) install_aaPanel
-        ;;
-        9) install_lemonbench
-        ;;
-        10) install_bench
-        ;;
-        11) install_netflix
-        ;;
-        12) change_hostname
-        ;;
-        13) media_check
-        ;;
-        *) echo -e "[${red}Error${plain}] Please enter the correct number!"
-        esac
-    }
-menu
-
 install_bbr() {
     wget -N --no-check-certificate "https://github.000060000.xyz/tcpx.sh" && chmod +x tcpx.sh && ./tcpx.sh
 }
@@ -190,3 +133,59 @@ change_hostname(){
 media_check() {
     bash <(curl -sSL "https://git.io/JswGm")
 }
+
+# Menu Function
+menu(){
+    echo & echo -e "Linux Tools by Vincent Young
+Feedback: https://github.com/missuo/LinuxTools/issues
+---------------------Mode List---------------------
+0. Exit
+1. Install BBR Kernel(@ylx2016)
+2. Install Cloudflare Warp(@missuo)
+3. Install Cloudflare Warp(@P3TERX)
+4. Install Shadowsocks
+5. Inatall MTProto(No TLS)
+6. Install MTProto(TLS)
+7. Install BestTrace
+8. Install aaPanel
+9. LemonBench
+10. Bench
+11. Netflix Check(@sjlleo)
+12. Change Hostname
+13. Media Check
+----------------------------------------------------
+"
+    read -p "Please enter the number of the mode you want: " num
+    case $num in
+        0) exit 0
+        ;;
+        1) install_bbr
+        ;;
+        2) install_cloudflare
+        ;;
+        3) install_cloudflare_p3terx
+        ;;
+        4) install_shadowsocks
+        ;;
+        5) install_mtproto_nontls
+        ;;
+        6) install_mtproto_tls
+        ;;
+        7) install_besttrace
+        ;;
+        8) install_aaPanel
+        ;;
+        9) install_lemonbench
+        ;;
+        10) install_bench
+        ;;
+        11) install_netflix
+        ;;
+        12) change_hostname
+        ;;
+        13) media_check
+        ;;
+        *) echo -e "[${red}Error${plain}] Please enter the correct number!"
+        esac
+    }
+menu
